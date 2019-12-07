@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div id="app">
+		<p>a对应数据——{{a}}</p>
+		<p>b对应数据与输入框绑定——{{b}}</p>
+		<textarea type="text" l-model="b"></textarea>
+		<p>c.d对应数据可以通过点击事件修改——{{c.d}}</p>
+		<div><button type="button" @click="testClick">点击</button></div>
+	</div>
+<script src="js/lin_Test.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var doc = new lin({
+		el:'#app',
+		data:{
+			a:1,
+			b:2,
+			c:{
+				d:3,
+			},
+		},
+		methods:{
+			testClick(){
+				this.c.d += 3
+			}
+		}
+	});
+</script>
+</body>
+</html>
